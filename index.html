@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Impact of Artificial Intelligence Today</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .chart-container { position: relative; width: 100%; max-width: 400px; margin-left: auto; margin-right: auto; height: 320px; max-height: 400px; }
+        @media (min-width: 768px) { .chart-container { height: 400px; } }
+        .nav-link.active { color: #0891b2; border-bottom-color: #0891b2; }
+        .tab-button.active { background-color: #0891b2; color: white; }
+        .tab-content { display: none; }
+        .tab-content.active { display: block; }
+        .interactive-block:hover { cursor: pointer; transform: translateY(-2px); transition: transform 0.2s ease-in-out; }
+        .interactive-list-item:hover { cursor: pointer; color: #0891b2; transition: color 0.2s ease-in-out; }
+        video { width: 100%; height: auto; display: block; }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800">
+
+    <header class="bg-white/80 backdrop-blur-lg sticky top-0 z-50 shadow-sm">
+        <nav class="container mx-auto px-4">
+            <div class="flex items-center justify-between h-16">
+                <h1 class="text-xl font-bold text-cyan-700">The AI Revolution</h1>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#what-is-ai" class="nav-link text-slate-600 hover:text-cyan-600 border-b-2 border-transparent transition-colors duration-300">What is AI?</a>
+                    <a href="#impact" class="nav-link text-slate-600 hover:text-cyan-600 border-b-2 border-transparent transition-colors duration-300">Impact</a>
+                    <a href="#balance" class="nav-link text-slate-600 hover:text-cyan-600 border-b-2 border-transparent transition-colors duration-300">Balance</a>
+                    <a href="#future" class="nav-link text-slate-600 hover:text-cyan-600 border-b-2 border-transparent transition-colors duration-300">The Future</a>
+                </div>
+                <div class="md:hidden">
+                    <select id="mobile-nav" class="bg-white border border-slate-300 rounded-md p-2 text-slate-600">
+                        <option value="#home">Home</option>
+                        <option value="#what-is-ai">What is AI?</option>
+                        <option value="#impact">Impact</option>
+                        <option value="#balance">Balance</option>
+                        <option value="#future">The Future</option>
+                    </select>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container mx-auto px-4 py-8 md:py-12">
+        
+        <section id="home" class="text-center py-16 md:py-24">
+            <h2 class="text-4xl md:text-6xl font-bold tracking-tight text-slate-900">The AI Revolution</h2>
+            <p class="mt-4 text-lg md:text-xl text-slate-600 max-w-3xl mx-auto">Shaping our present, defining our future. An interactive exploration of the impact of Artificial Intelligence today.</p>
+        </section>
+
+        <section id="what-is-ai" class="py-12 md:py-20 bg-white rounded-2xl shadow-lg">
+            <div class="max-w-5xl mx-auto px-6"> <h3 class="text-3xl font-bold text-center text-cyan-800">What is Artificial Intelligence?</h3>
+                <p class="mt-4 text-center text-slate-600">This section introduces the fundamental concept of AI. It's not just about robots; it's an invisible technology already powering our world in remarkable ways. Explore the capabilities that make AI so transformative.</p>
+                <div class="mt-12 grid md:grid-cols-3 gap-8 items-center">
+                    <div class="prose max-w-none text-slate-600 md:col-span-2">
+                        <video id="ai-concept-video" src="What is artificial intelligence_ _ The Royal Society.mp4" controls autoplay loop muted playsinline class="rounded-lg shadow-md mb-6 w-full h-auto" onerror="this.onerror=null;this.src='https://www.w3schools.com/html/mov_bbb.mp4';">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                    <div class="grid grid-cols-2 gap-6 md:col-span-1">
+                        <div class="bg-slate-100 p-6 rounded-lg text-center interactive-block">
+                            <span class="text-4xl">🧠</span>
+                            <h5 class="mt-2 font-semibold">Learning</h5>
+                            <p class="text-sm text-slate-500">Acquiring and processing new information.</p>
+                        </div>
+                        <div class="bg-slate-100 p-6 rounded-lg text-center interactive-block">
+                            <span class="text-4xl">⚙️</span>
+                            <h5 class="mt-2 font-semibold">Problem-Solving</h5>
+                            <p class="text-sm text-slate-500">Finding solutions to complex challenges.</p>
+                        </div>
+                        <div class="bg-slate-100 p-6 rounded-lg text-center interactive-block">
+                            <span class="text-4xl">🗣️</span>
+                            <h5 class="mt-2 font-semibold">Language</h5>
+                            <p class="text-sm text-slate-500">Understanding and generating human speech.</p>
+                        </div>
+                        <div class="bg-slate-100 p-6 rounded-lg text-center interactive-block">
+                            <span class="text-4xl">🎯</span>
+                            <h5 class="mt-2 font-semibold">Recognition</h5>
+                            <p class="text-sm text-slate-500">Identifying patterns in data, images, and sounds.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="impact" class="py-12 md:py-20">
+            <h3 class="text-3xl font-bold text-center text-cyan-800">AI's Impact Across Industries</h3>
+            <p class="mt-4 text-center text-slate-600 max-w-3xl mx-auto">AI's influence is vast, reshaping industries and our daily lives. Use the tabs below to explore how AI is driving specific changes in the workforce, healthcare, education, and our everyday routines.</p>
+            <div class="mt-12 max-w-5xl mx-auto">
+                <div id="tabs-container" class="flex flex-wrap justify-center border-b border-slate-200 mb-8">
+                    <button data-tab="workforce" class="tab-button text-slate-600 py-3 px-6 font-medium border-b-2 border-transparent hover:bg-slate-100 transition-colors duration-200 active" data-video="AMR vs AGV Robotic Solutions in Warehouse Automation.mp4">Workforce</button>
+                    <button data-tab="healthcare" class="tab-button text-slate-600 py-3 px-6 font-medium border-b-2 border-transparent hover:bg-slate-100 transition-colors duration-200" data-video="ai-in-medicine-possible-applications-and-potentials-ytshorts.savetube.me.mp4">Healthcare</button>
+                    <button data-tab="education" class="tab-button text-slate-600 py-3 px-6 font-medium border-b-2 border-transparent hover:bg-slate-100 transition-colors duration-200" data-video="How China Is Using Artificial Intelligence in Classrooms _ WSJ.mp4">Education</button>
+                    <button data-tab="dailylife" class="tab-button text-slate-600 py-3 px-6 font-medium border-b-2 border-transparent hover:bg-slate-100 transition-colors duration-200" data-video="how-ai-works-in-everyday-life-google-ai-ytshorts.savetube.me.mp4">Daily Life</button>
+                </div>
+                <div id="tab-content-container" class="bg-white p-8 rounded-2xl shadow-lg min-h-[350px]">
+                    <video id="impact-tab-video" src="https://www.w3schools.com/html/mov_bbb.mp4" controls autoplay loop muted playsinline class="rounded-lg shadow-md mb-6 w-full h-auto" onerror="this.onerror=null;this.src='https://www.w3schools.com/html/mov_bbb.mp4';">
+                        Your browser does not support the video tag.
+                    </video>
+                    <div id="workforce-content" class="tab-content active">
+                        <h4 class="font-bold text-xl text-slate-800">Transforming Work & Economy</h4>
+                        <ul class="mt-4 list-disc list-inside space-y-2 text-slate-600">
+                            <li><strong>Automation:</strong> Repetitive tasks are automated, increasing efficiency.</li>
+                            <li><strong>New Jobs:</strong> Creation of new roles focused on AI management and development.</li>
+                            <li><strong>Increased Productivity:</strong> Optimization of processes and data-driven decision-making.</li>
+                            <li><strong>Skill Shifts:</strong> Growing demand for analytical, creative, and technical skills.</li>
+                        </ul>
+                    </div>
+                    <div id="healthcare-content" class="tab-content">
+                        <h4 class="font-bold text-xl text-slate-800">Revolutionizing Healthcare</h4>
+                        <ul class="mt-4 list-disc list-inside space-y-2 text-slate-600">
+                            <li><strong>Faster Diagnostics:</strong> Analysis of medical images (X-rays, MRIs) with high precision.</li>
+                            <li><strong>Personalized Medicine:</strong> Treatments tailored to each patient's genetic profile.</li>
+                            <li><strong>Drug Discovery:</strong> Acceleration of research and development for new medications.</li>
+                            <li><strong>Robotic Surgery:</strong> Increased precision and minimization of invasive procedures.</li>
+                        </ul>
+                    </div>
+                    <div id="education-content" class="tab-content">
+                        <h4 class="font-bold text-xl text-slate-800">Personalizing Education</h4>
+                        <ul class="mt-4 list-disc list-inside space-y-2 text-slate-600">
+                            <li><strong>Adaptive Learning:</strong> Platforms that adjust content to each student's pace.</li>
+                            <li><strong>Intelligent Tutoring Systems:</strong> Individualized support and instant feedback.</li>
+                            <li><strong>Administrative Automation:</strong> Optimization of enrollments, grading, and resource management.</li>
+                        </ul>
+                    </div>
+                    <div id="dailylife-content" class="tab-content">
+                         <h4 class="font-bold text-xl text-slate-800">Integrated into Our Daily Lives</h4>
+                        <ul class="mt-4 list-disc list-inside space-y-2 text-slate-600">
+                           <li><strong>Smart Assistants:</strong> Organizing tasks, controlling smart home devices.</li>
+                            <li><strong>Recommendation Engines:</strong> Personalized suggestions on streaming services, e-commerce, and news.</li>
+                            <li><strong>Autonomous Vehicles:</strong> Development of cars that navigate without human intervention.</li>
+                            <li><strong>Enhanced Security:</strong> Fraud detection and facial recognition for protection.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="balance" class="py-12 md:py-20 bg-white rounded-2xl shadow-lg">
+            <h3 class="text-3xl font-bold text-center text-cyan-800">The Balance of AI: Benefits vs. Challenges</h3>
+            <div class="mt-12 grid md:grid-cols-2 gap-12 items-center">
+                <div class="px-6">
+                    <video id="benefits-video" src="Microsoft AI – Empowering Transformation.mp4" controls autoplay loop muted playsinline class="rounded-lg shadow-md mb-6 w-full h-auto" onerror="this.onerror=null;this.src='https://www.w3schools.com/html/mov_bbb.mp4';">
+                        Your browser does not support the video tag.
+                    </video>
+                    <h4 class="font-bold text-2xl text-green-600 mb-4">Benefits & Opportunities</h4>
+                    <ul class="space-y-3 text-slate-600">
+                        <li class="interactive-list-item"><strong>✅ Efficiency & Productivity:</strong> Automates tasks, optimizes complex processes.</li>
+                        <li class="interactive-list-item"><strong>✅ Innovation:</strong> Drives new discoveries in science and technology.</li>
+                        <li class="interactive-list-item"><strong>✅ Personalization:</strong> Offers tailored experiences in various services.</li>
+                        <li class="interactive-list-item"><strong>✅ Accessibility:</strong> Creates tools that assist people with disabilities.</li>
+                        <li class="interactive-list-item"><strong>✅ Global Problem Solving:</strong> Helps tackle challenges like climate change and disease.</li>
+                    </ul>
+                </div>
+                 <div class="px-6">
+                    <video id="challenges-video" src="The last job on Earth_ imagining a fully automated world.mp4" controls autoplay loop muted playsinline class="rounded-lg shadow-md mb-6 w-full h-auto" onerror="this.onerror=null;this.src='https://www.w3schools.com/html/mov_bbb.mp4';">
+                        Your browser does not support the video tag.
+                    </video>
+                    <h4 class="font-bold text-2xl text-amber-600 mb-4">Challenges & Ethical Considerations</h4>
+                    <ul class="space-y-3 text-slate-600">
+                        <li class="interactive-list-item"><strong>⚠️ Job Displacement:</strong> Concerns about automation replacing human roles.</li>
+                        <li class="interactive-list-item"><strong>⚠️ Bias & Fairness:</strong> Risk of AI systems reflecting and amplifying societal biases.</li>
+                        <li class="interactive-list-item"><strong>⚠️ Privacy & Security:</strong> Massive data collection and the potential for its misuse.</li>
+                        <li class="interactive-list-item"><strong>⚠️ Accountability:</strong> Difficulty in determining blame for AI decisions.</li>
+                        <li class="interactive-list-item"><strong>⚠️ Regulation:</strong> Need for robust ethical guidelines and legal frameworks.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="future" class="py-12 md:py-20">
+            <h3 class="text-3xl font-bold text-center text-cyan-800">The Future is Now</h3>
+             <div class="mt-12 max-w-4xl mx-auto">
+                <div class="space-y-8 relative before:absolute before:inset-0 before:ml-5 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-cyan-200 before:via-cyan-300 before:to-cyan-400">
+                    <div class="relative flex items-center">
+                        <div class="w-10 h-10 rounded-full bg-cyan-500 shadow-md flex items-center justify-center ring-8 ring-slate-50">
+                            <span class="text-white font-bold">1</span>
+                        </div>
+                        <div class="ml-8 bg-white p-6 rounded-lg shadow-md w-full">
+                            <h4 class="font-bold">AI is already integrated</h4>
+                            <p class="text-slate-600">It's not a distant concept; it's deeply embedded in our present.</p>
+                        </div>
+                    </div>
+                    <div class="relative flex items-center">
+                        <div class="w-10 h-10 rounded-full bg-cyan-500 shadow-md flex items-center justify-center ring-8 ring-slate-50">
+                            <span class="text-white font-bold">2</span>
+                        </div>
+                        <div class="ml-8 bg-white p-6 rounded-lg shadow-md w-full">
+                            <h4 class="font-bold">Continuous evolution</h4>
+                            <p class="text-slate-600">AI will become even more sophisticated and capable at an accelerated pace.</p>
+                        </div>
+                    </div>
+                    <div class="relative flex items-center">
+                         <div class="w-10 h-10 rounded-full bg-cyan-500 shadow-md flex items-center justify-center ring-8 ring-slate-50">
+                            <span class="text-white font-bold">3</span>
+                        </div>
+                        <div class="ml-8 bg-white p-6 rounded-lg shadow-md w-full">
+                            <h4 class="font-bold">Our role: Responsible guidance</h4>
+                            <p class="text-slate-600">We must guide its development responsibly and ethically to ensure it benefits all of humanity.</p>
+                        </div>
+                    </div>
+                     <div class="relative flex items-center">
+                         <div class="w-10 h-10 rounded-full bg-cyan-600 shadow-lg flex items-center justify-center ring-8 ring-slate-50">
+                            <span class="text-white text-xl">🚀</span>
+                        </div>
+                        <div class="ml-8 bg-white p-6 rounded-lg shadow-xl w-full border-t-4 border-cyan-500">
+                            <h4 class="font-bold text-cyan-800">Call to Action</h4>
+                            <p class="text-slate-600">Embrace continuous learning, adapt to change, and actively participate in the conversation about the future of AI.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-slate-800 text-slate-400 py-6 text-center">
+        <p>Interactive application created to explore the impact of Artificial Intelligence.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const tabsContainer = document.getElementById('tabs-container');
+            const contentContainer = document.getElementById('tab-content-container');
+            const impactTabVideo = document.getElementById('impact-tab-video');
+
+            if (tabsContainer) {
+                tabsContainer.addEventListener('click', (event) => {
+                    if (event.target.matches('.tab-button')) {
+                        const tabId = event.target.dataset.tab;
+                        const videoUrl = event.target.dataset.video;
+
+                        tabsContainer.querySelectorAll('.tab-button').forEach(button => {
+                            button.classList.remove('active');
+                        });
+                        event.target.classList.add('active');
+                        
+                        contentContainer.querySelectorAll('.tab-content').forEach(content => {
+                            content.classList.remove('active');
+                        });
+                        document.getElementById(`${tabId}-content`).classList.add('active');
+
+                        if (impactTabVideo && videoUrl) {
+                            impactTabVideo.src = videoUrl;
+                            impactTabVideo.play();
+                        }
+                    }
+                });
+                // Set initial video for the first active tab
+                const initialTabButton = tabsContainer.querySelector('.tab-button.active');
+                if (initialTabButton && impactTabVideo) {
+                    impactTabVideo.src = initialTabButton.dataset.video;
+                    impactTabVideo.play();
+                }
+            }
+
+            const aiConceptVideo = document.getElementById('ai-concept-video');
+            const interactiveBlocks = document.querySelectorAll('.interactive-block');
+
+            interactiveBlocks.forEach(block => {
+                block.addEventListener('click', () => {
+                    const videoUrl = block.dataset.video;
+                    if (aiConceptVideo && videoUrl) {
+                        aiConceptVideo.src = videoUrl;
+                        aiConceptVideo.play();
+                    }
+                });
+            });
+
+            const benefitsVideo = document.getElementById('benefits-video');
+            const challengesVideo = document.getElementById('challenges-video');
+            const interactiveListItems = document.querySelectorAll('.interactive-list-item');
+
+            interactiveListItems.forEach(item => {
+                item.addEventListener('click', () => {
+                    const videoUrl = item.dataset.video;
+                    if (videoUrl) {
+                        // Determine if it's a benefit or challenge item
+                        const parentUl = item.closest('ul');
+                        if (parentUl) {
+                            const parentSection = parentUl.closest('.px-6');
+                            if (parentSection) {
+                                if (parentSection.querySelector('h4').classList.contains('text-green-600')) {
+                                    // It's a benefit item
+                                    if (benefitsVideo) {
+                                        benefitsVideo.src = videoUrl;
+                                        benefitsVideo.play();
+                                    }
+                                } else if (parentSection.querySelector('h4').classList.contains('text-amber-600')) {
+                                    // It's a challenge item
+                                    if (challengesVideo) {
+                                        challengesVideo.src = videoUrl;
+                                        challengesVideo.play();
+                                    }
+                                }
+                            }
+                        }
+                    }
+                });
+            });
+
+
+            const mobileNav = document.getElementById('mobile-nav');
+            if (mobileNav) {
+                mobileNav.addEventListener('change', (e) => {
+                    window.location.hash = e.target.value;
+                });
+            }
+            
+            const navLinks = document.querySelectorAll('.nav-link');
+            const sections = document.querySelectorAll('main section');
+
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.5
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        navLinks.forEach(link => {
+                            link.classList.remove('active');
+                            if (link.getAttribute('href').substring(1) === entry.target.id) {
+                                link.classList.add('active');
+                            }
+                        });
+                    }
+                });
+            }, observerOptions);
+
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+        });
+    </script>
+
+</body>
+</html>
